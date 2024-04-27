@@ -15,14 +15,16 @@ function Index(props) {
       <div className="padre_2">
       <div className="publicaciones">
         <Publicacion />
-        
       </div>
+
       <div className="User_categoria_list">
         <User_index />
-        
       </div>
+
       </div>
+      
     </div>
+    
   );
 }
 

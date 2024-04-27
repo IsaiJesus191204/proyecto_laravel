@@ -6,7 +6,7 @@ function Publicacion() {
   return (
     <div className="publicaciones_">
       <div className="menu">
-      <a href="src/components/posts/Crear_Publicacion.jsx" type="button">
+      <a href="./posts/Crear_Publicacion.jsx" type="button">
       <img src={logo4} alt="Logo" className="menu-icon" />
 </a>
         <nav class="menu_nav" id="nav">
