@@ -5,7 +5,11 @@
      margin:90px 50px;
      width: auto;
      height: 750px;
+<<<<<<< HEAD
      background-color: #ffffff;
+=======
+     background-color: #dcdcdd;
+>>>>>>> f6bbd47 (cambios luis)
      flex-direction:row ;
     border-radius: 50px;
      border:2px solid black;

@@ -89,6 +89,13 @@ height: 60px;
      position: absolute;
      border: 2px solid rgb(75, 183, 255);
      background-color: rgb(255, 255, 255);border-radius: 5px;
+.modal{
+     height: 200px;
+     width: auto;
+     padding: 20px;
+     position: absolute;
+     border: 2px solid red;
+     background-color: aliceblue;border-radius: 5px;
      top: 85px;
      right:100px ;
 }
@@ -105,3 +112,8 @@ height: 60px;
      background-color: rgb(32, 125, 255);
      
      }
+     border: 2px solid rgb(0, 255, 204);
+}
+.modal p{
+
+}

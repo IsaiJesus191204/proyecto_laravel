@@ -76,7 +76,7 @@ function Header_home(props) {
                 <p>User:</p>
                 <p>niebles quiña luis angel</p>
               </nav>
-              
+
               <button onClick={toggleModal}>Salir</button>
             </div>
           </div>
