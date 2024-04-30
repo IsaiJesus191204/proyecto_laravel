@@ -168,3 +168,40 @@ margin-left: 10px;
           height: 200px;
           width: 200px;
 }
+
+
+
+
+
+
+
+.modal-open {
+     overflow: hidden; /* Evita el scroll en el body cuando el modal está abierto */
+   }
+   
+   .custom-modal {
+     background-color: rgba(0, 0, 0, 0.5); /* Color de fondo opaco */
+   }
+   
+   .modal-body {
+     padding: 20px; /* Espacio interno del modal */
+   }
+   
+   .modal-footer {
+     display: flex;
+     justify-content: flex-end;
+     padding: 10px;
+   }
+   
+   .modal-footer button {
+     padding: 5px 10px;
+     background-color: transparent;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   .modal-footer button:hover {
+     background-color: #f0f0f0;
+   }
+   
