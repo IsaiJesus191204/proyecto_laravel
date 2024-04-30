@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Index from "./components/Home";
+import Index from "./components/Noticia";
 import "./App.css";
 
 function App() {
