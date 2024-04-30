@@ -1,5 +1,7 @@
+import "./Crear_Publicacion.css";
 import logo4 from "../../assets/img/mas.png";
 import logo2 from "../../assets/img/user.png";
+
 
 function CrearPublicacion() {
   return (
@@ -7,11 +9,10 @@ function CrearPublicacion() {
       <div className="padre_create_p">
         <header>
           <nav>
-            <img src={logo4}></img>
+
             <h3>Nueva Publicacion</h3>
           </nav>
           <nav>
-            <img src={logo2}></img>
           </nav>
         </header>
         <body>
@@ -21,15 +22,15 @@ function CrearPublicacion() {
               <input type="text" name="titulo" id="" />
             </div>
             <div>
-              <lavel for="sub_tema">Sub Tema</lavel>
+              <lavel for="sub_tema">Sub Tema:  </lavel>
               <input type="text" name="sub_tema" id="" />
             </div>
             <div>
-              <lavel for="contenido">Contenido</lavel>
+              <lavel for="contenido">Contenido:  </lavel>
               <textarea name="contenido" id="contenido"></textarea>
             </div>
             <div>
-              <lavel for="imagen">Imagen</lavel>
+              <lavel for="imagen">Imagen:         </lavel>
               <input type="file" name="imagen" id="" accept="images/*" />
             </div>
             <div>

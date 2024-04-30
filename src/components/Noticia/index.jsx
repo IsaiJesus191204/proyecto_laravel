@@ -1,10 +1,9 @@
 import React from "react";
-
 import Header_home from "./header_home";
 import Publicacion from "./publicacion";
-import User_index from "./user_index";
-
+import Nota from "./Nota";
 import "./index.css";
+
 
 function Index(props) {
   return (
@@ -13,17 +12,22 @@ function Index(props) {
         <Header_home />
       </div>
 
+
       <div className="padre_2">
-        <div className="publicaciones">
-          <Publicacion />
-        </div>
-        <div className="User_categoria_list">
-          <User_index />
+      <div className="publicaciones">
+        <Publicacion /></div>
+
+      
+      
+
+ 
+        <div className="padre_3">
+      <div className="Cuadro">
+        <Nota/></div></div>
+
         </div>
       </div>
-      
-    </div>
-    
+  
   );
 }
 

@@ -1,11 +1,12 @@
+
 import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Index from "./components/Home";
-import Comentarios from "./components/posts/Comentarios";
-import CrearPublicacion from "./components/posts/Crear_Publicacion";
+import Comentarios from "../components/posts/Comentarios";
+import CrearPublicacion from "../components/posts/Crear_Publicacion";
 //ss
-import User_publicacion from "./components/posts/user_publicacion";
+import User_publicacion from "../components/posts/user_publicacion";
 
 import "./App.css";
 

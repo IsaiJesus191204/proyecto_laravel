@@ -13,18 +13,18 @@ body {
     border-radius: 5px;
     padding: 15px;
     margin-top: 20px;
-    max-width: 600px; /* Ajusta el ancho máximo del cuadro de comentario según sea necesario */
+    max-width: 600px; 
   }
   .comentario .top-frame h2 {
     text-align: left;
   }
   
-  /* Nuevo estilo para la imagen de perfil del comentario */
+
 .comentario .comentario-com {
-    width: 40px; /* Mismo ancho que la imagen de perfil de p4cman jose */
-    height: 40px; /* Mismo alto que la imagen de perfil de p4cman jose */
+    width: 40px; 
+    height: 40px; 
     border-radius: 50%;
-    margin-right: 10px; /* Margen derecho para separar la imagen del nombre de usuario */
+    margin-right: 10px; 
   }
   
   

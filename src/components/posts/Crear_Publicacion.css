@@ -1,0 +1,101 @@
+/* Overall form container */
+.padre_create_p {
+  display: flex;
+  flex-direction: column;
+  width: 500px; /* Set a fixed width for the form */
+  position: absolute; /* Position the element absolutely */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the element within its parent */
+  padding: 20px;
+  border: 1px solid #ddd; /* Optional light border */
+  border-radius: 5px; /* Gentle rounded corners */
+  background-color: #f5f5f5;
+}
+
+/* Header section */
+.padre_create_p header {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd; /* Optional divider line */
+}
+
+.padre_create_p header h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+/* Body section (form) */
+.padre_create_p body {
+  padding: 15px;
+}
+
+/* Form fields */
+.padre_create_p form div {
+  margin-bottom: 10px;
+}
+
+.padre_create_p form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.padre_create_p form input[type="text"],
+.padre_create_p form textarea {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.padre_create_p form textarea {
+  height: 150px;
+}
+
+.padre_create_p form input[type="file"] {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.padre_create_p form nav {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.padre_create_p form select {
+  width: 150px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.padre_create_p form button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.padre_create_p form button:first-child {
+  background-color: #ddd;
+  color: #333;
+}
+
+.padre_create_p form button:last-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.padre_create_p form button:hover {
+  opacity: 0.8;
+}
