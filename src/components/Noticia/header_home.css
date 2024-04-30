@@ -1,0 +1,82 @@
+.padre_home {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 0px;
+  padding-right: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: white;
+  margin-top: 100pz; /* Ajusta según sea necesario */
+  z-index: 1000;
+}            
+
+.head_home{
+     display: flex;
+          height: 100px;
+          width:auto;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 15px;
+}
+
+.logo{
+    
+     max-height: 120px;
+          max-width: 120px;
+          min-height: 120px;
+          min-width: 120px;
+   
+     margin-right: 20px;
+}
+
+.busqueda{
+height: 60px;
+     width: 700px;
+     
+     
+     margin-left: 20px;
+     
+     background-color: white;
+     align-self: center;
+   
+     
+     
+}
+.busqueda input{
+     background-color: white;
+     border: 1.5px solid black;
+     border-radius: 20px;
+
+}
+
+.user_box{
+    
+     font-family: "Mukta", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+     
+     margin-left: 50px;
+}
+.user_box p {
+     border: 1.5px solid black;
+     /* padding: 3px 10px; */
+     border-radius:20px ;
+     max-width: 200px;
+     max-height: 30px;
+     min-width: 200px;
+          min-height: 30px;
+     padding: 5px 10px;
+
+}
+.user img{
+     max-height:60px;
+     max-width: 60px;
+     min-height: 60px;
+          min-width: 60px;
+}
