@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-color: #fffaeb;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
     color: #000;
   }
   .comentario {
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 15px;
     margin-top: 20px;
@@ -26,10 +26,9 @@ body {
   }
   
   .divider {
-    border: 0; /* Elimina el borde predeterminado */
-    height: 4px; /* Establece la altura de la línea */
-    background-color: #000000; /* Color de la línea */
-    width: 100%; /* Establece el ancho al 100% */
+    border-top: 3px solid #000000;/* Establece la altura de la línea */
+    margin-left: -6.1%;
+    width: 112%; /* Establece el ancho al 100% */
     margin-top: 20px; /* Ajusta el margen superior según sea necesario */
   }
   
@@ -38,8 +37,11 @@ body {
     max-width: 750px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 5px;
+    position: relative;
     border-top-left-radius: 15px; /* Borde redondeado en la esquina superior izquierda */
     border-top-right-radius: 15px;
     border-top: 3px solid #000; /* Borde negro en la parte superior */
@@ -52,9 +54,7 @@ body {
 
   .top-frame {
     text-align: center;
-    background-color: #fffaeb;
-    padding: 20px;
-    margin-bottom: 0;
+    background-color: #ffffff;
     max-width: 700px;
     /* Sin borde en la parte inferior */
   }
@@ -80,7 +80,7 @@ body {
   
   header {
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff;
   }
   
   .header-container {
@@ -157,7 +157,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #000;
   }
   
@@ -167,7 +167,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #000;
   }
   
@@ -190,9 +190,45 @@ body {
     padding: 15px;
   }
   
-  .comentario img {
-    margin-top: 10px;
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+  .imagen_arbol {
+    margin-top: 30px;
+    width: 100%; /* Ajusta la imagen para ocupar todo el ancho disponible */
+    max-height: 380px;
+    object-fit: cover; /* Ajusta la imagen para llenar el espacio sin distorsionarla */
+}
+
+
+
+
+
+  .btn_noticia {
+    margin-right: 10px;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 7px;
+    padding: 0.5px 30px;
+    border: 4px solid #000000; 
   }
+  
+  .btn_programacion {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 7px;
+    padding: 0.5px 20px;
+    border: 4px solid #000000; 
+  }
+
+  .texto_medio {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100%; /* Opcional: ajusta la altura del contenedor */
+}
+
+ 
+
+.close-btn {
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es clickeable */
+  color: rgb(0, 0, 0); /* Cambia el color del texto del botón */
+  font-size: 20px; /* Cambia el tamaño del texto */
+}

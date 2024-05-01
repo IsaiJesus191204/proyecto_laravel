@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo4 from "../../assets/img/mas.png";
 import Publicacion_card from "./publicacion_card";
