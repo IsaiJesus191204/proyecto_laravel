@@ -9,7 +9,7 @@
     border-color: #1da1f2;
   }
   
-  .modal-footer .btn-primary:hover {
+  .modal-footer .primary:hover {
     background-color: #0f81c7;
     border-color: #0f81c7;
   }
@@ -43,5 +43,8 @@
   /* Estilos para el botón de cerrar el modal */
   .close {
     color: #1da1f2;
+  }
+  .button_crear_publicacion{
+    outline: 2px solid red;
   }
   
