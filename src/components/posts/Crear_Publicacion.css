@@ -1,0 +1,47 @@
+/* Estilos para el modal */
+.modal-content {
+    border-radius: 12px;
+  }
+  
+  /* Estilos para los botones dentro del modal */
+  .modal-footer .btn-primary {
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+  }
+  
+  .modal-footer .btn-primary:hover {
+    background-color: #0f81c7;
+    border-color: #0f81c7;
+  }
+  
+  .modal-footer .btn-secondary {
+    background-color: transparent;
+    border-color: #1da1f2;
+    color: #1da1f2;
+  }
+  
+  .modal-footer .btn-secondary:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
+  
+  /* Estilos para los campos de formulario dentro del modal */
+  .modal-body .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para el encabezado del modal */
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  /* Estilos para el título del modal */
+  .modal-title {
+    color: #14171a;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el botón de cerrar el modal */
+  .close {
+    color: #1da1f2;
+  }
+  

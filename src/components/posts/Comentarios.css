@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+    background-color: #fffaeb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .user-name h1 {
+    color: #000;
+  }
+  .comentario {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    max-width: 600px; /* Ajusta el ancho máximo del cuadro de comentario según sea necesario */
+  }
+  .comentario .top-frame h2 {
+    text-align: left;
+  }
+  
+  /* Nuevo estilo para la imagen de perfil del comentario */
+.comentario .comentario-com {
+    width: 40px; /* Mismo ancho que la imagen de perfil de p4cman jose */
+    height: 40px; /* Mismo alto que la imagen de perfil de p4cman jose */
+    border-radius: 50%;
+    margin-right: 10px; /* Margen derecho para separar la imagen del nombre de usuario */
+  }
+  
+  
+
+  .comentarios-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: -25px;
+  }
+  
+  
+  /* Header Styles */
+  header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-frame {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  .user-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_img {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .nav {
+    margin-right: 10px;
+  }
+  
+  .nac {
+    color: #888;
+  }
+  
+  .action-buttons {
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .noticia {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .programacion {
+    background-color: #fff;
+    color: #000;
+  }
+  .btn {
+    padding: 10px 15px;
+    border: 2px solid #000; /* Ancho y color del borde resaltado */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  
+  /* Comentario Styles */
+  .comentario {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+  }
+  
+  .comentario img {
+    margin-top: 10px;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Responder Styles */
+  .responder {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .responder-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4caf50; /* Green */
+    color: white;
+  }
+  
