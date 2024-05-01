@@ -1,4 +1,5 @@
 // MiComponente.js
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import React from "react";
@@ -17,9 +18,9 @@ function Header_home(props) {
     <div className="padre_home">
       <div className="head_home">
         <div className="logo">
-          <a href="" className="">
+          <Link to={'/home'}>
             <img src={logo3} className=""></img>
-          </a>
+          </Link>
         </div>
         <div className="busqueda_home">
           <form class="busqueda_form">
