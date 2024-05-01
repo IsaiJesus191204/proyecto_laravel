@@ -61,7 +61,7 @@ function Header_home(props) {
       <div className="user_box flex items-center">
         <p className=" user_p mr-4 text-1xl">Luis Niebles - Estudiante</p>
         <div
-          className="user  rounded-full flex items-center justify-center "
+          className="user rounded"
           onClick={toggleModal}
         >
           <img src={logo2} className="rounded-full"></img>
@@ -70,11 +70,11 @@ function Header_home(props) {
           <div className="modal_login">
             <div className="modal-content">
               <nav>
-                <p>User:</p>
-                <p>niebles quiña luis angel</p>
+                <p><strong>User:</strong></p>
+                <p>Luis Angel Niebles Quiña</p>
               </nav>
               
-              <button onClick={toggleModal}>Salir</button>
+              <button onClick={toggleModal}><strong>Salir</strong></button>
             </div>
           </div>
         )}

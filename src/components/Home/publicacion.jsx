@@ -4,6 +4,7 @@ import logo4 from "../../assets/img/mas.png";
 import Publicacion_card from "./publicacion_card";
 import logo3 from "../../assets/img/mas.png";
 import logo_virgo from "../../assets/img/virgo_png.png"
+import { Link } from "react-router-dom";
 import "./publicaciones.css";
 
 function Publicacion() {
@@ -73,13 +74,13 @@ function Publicacion() {
       </nav>
       </div>
 
-      <div className="publicacion-cards">
-        <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
-      </div>
+      <Link to={"/user_posts"}>
+          <Publicacion_card />
+          <Publicacion_card />
+          <Publicacion_card />
+          <Publicacion_card />
+          <Publicacion_card />
+        </Link>
 
       {showForm && (
         <div className="modal-container">
