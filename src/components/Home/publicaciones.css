@@ -1,6 +1,4 @@
-h1{
-     color: blue;
-}
+
 .publicaciones_{
 display: flex;
 
@@ -9,7 +7,7 @@ flex-direction:  column;
 align-items: flex-start;
      height: 1000px;
      width: 900px;
-    
+    background-color: rgb(255, 255, 255);
      margin: 40px;
 }
 
@@ -58,7 +56,7 @@ border-bottom: 5px solid rgb(77, 76, 76)
      display: inline-block;
           position: relative;
           overflow: hidden;
-          background-color: rgb(218, 216, 216);
+          background-color: rgb(255, 255, 255);
      border: 1px solid black;
      margin-left: 5px;
      border-radius: 0% 0% 90% 90%;
@@ -179,7 +177,7 @@ margin-left: 10px;
 
    
    .modal {
-     background-color: white; /* Ajusta el color de fondo del modal según sea necesario */
+     background-color: rgb(255, 255, 255); /* Ajusta el color de fondo del modal según sea necesario */
    }
    
    .fondo-opaco {

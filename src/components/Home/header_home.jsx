@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import React from "react";
+
+import logo3 from "../../assets/img/audi.png";
 import logo from "../../assets/img/logo.png";
 import logo2 from "../../assets/img/user.png";
-import logo3 from "../../assets/img/audi.png";
+
 import "./header_home.css";
+
 function Header_home(props) {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -67,7 +70,7 @@ function Header_home(props) {
           <img src={logo2} className="  rounded-full"></img>
         </div>
         {modalVisible && (
-          <div className="modal">
+          <div className="modal_loguin">
             <div className="modal-content">
               <nav>
                 <p>User:</p>

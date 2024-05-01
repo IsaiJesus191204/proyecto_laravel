@@ -82,13 +82,13 @@ height: 60px;
 
 
 }
-.modal{
+.modal_loguin{
      height: auto;
      width: 200px;
     
      position: absolute;
      border: 2px solid rgb(75, 183, 255);
-     background-color: aliceblue;border-radius: 5px;
+     background-color: rgb(255, 255, 255);border-radius: 5px;
      top: 85px;
      right:100px ;
 }
@@ -99,11 +99,7 @@ height: 60px;
      height: 100%;
     
 }
-.modal p{
-     
 
-
-}
 .modal-content button{
      margin-top: 10px;
      background-color: rgb(32, 125, 255);
