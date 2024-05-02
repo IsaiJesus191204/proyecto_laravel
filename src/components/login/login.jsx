@@ -16,7 +16,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("http://127.0.0.1:8000/api/login", {
+    const response = await axios.post(https://laravel-back.up.railway.app/api/login", {
       email,
       password,
     });
