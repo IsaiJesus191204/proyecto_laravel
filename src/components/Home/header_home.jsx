@@ -33,7 +33,7 @@ function Header_home(props) {
       <div className="user_box flex items-center">
         <p className=" user_p mr-4 text-1xl">Luis Niebles - Estudiante</p>
         <div
-          className="user  rounded-full flex items-center justify-center "
+          className="user rounded"
           onClick={toggleModal}
         >
           <img src={logo2} className="rounded-full"></img>
