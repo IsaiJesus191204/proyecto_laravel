@@ -5,11 +5,12 @@
    
   }
   
-  .users_list{
-    
+  .users_list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow-y: auto; /* Agregado */
+    max-height: 300px; /* Ajusta la altura máxima según sea necesario */
   }
   .users_list h2 {
     font-size: 18px;
@@ -18,8 +19,9 @@
   }
   
   .users_list img {
-    width: 30px;
-    height: auto;
+    width: 50px;
+    border-radius: 100%;
+    height: 50px;
     margin-right: 10px;
     float: left;
   }
@@ -70,26 +72,25 @@
 
 
   
-  
-
   .categories-container {
-    background-color: #fff; 
+    background-color: #fff;
     color: #333;
     padding: 10px 10px;
     border-radius: 10px;
-    margin-top: 25px; /* Ajustar la separación según necesites */
-    border: 3px solid #000000; 
-    
-
+    margin-top: 25px;
+    border: 3px solid #000000;
+    overflow-y: auto; /* Puedes agregar esto si la sección completa necesita desplazamiento */
+    max-height: 500px; /* Ajusta la altura máxima según sea necesario */
   }
   
   .categories {
     width: auto;
     margin-top: 0px;
- 
     display: flex;
     flex-direction: column;
-    align-items:  flex-start;
+    align-items: flex-start;
+    overflow-y: auto; /* Agregado */
+    max-height: 300px; /* Ajusta la altura máxima según sea necesario */
   }
   .categories h2{
     font-size: 18px;

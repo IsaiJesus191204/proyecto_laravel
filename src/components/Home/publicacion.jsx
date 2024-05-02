@@ -1,23 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
-import logo4 from "../../assets/img/mas.png";
-import logo3 from "../../assets/img/mas.png";
-import logo_virgo from "../../assets/img/virgo_png.png";
-import Publicacion_card from "./publicacion_card";
-
-import "./publicaciones.css";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Publicacion_card from './publicacion_card';
+import logo4 from '../../assets/img/mas.png';
+import logo3 from '../../assets/img/mas.png';
+import logo_virgo from '../../assets/img/virgo_png.png';
 import "bootstrap/dist/css/bootstrap.min.css";
+import './publicaciones.css';
 
 function Publicacion() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    titulo: "",
-    subTema: "",
-    contenido: "",
-    categoria: "",
-    tema: "",
+    titulo: '',
+    subTema: '',
+    contenido: '',
+    categoria: '',
+    tema: '',
   });
+  const [publicaciones, setPublicaciones] = useState([]);
+
+  useEffect(() => {
+    const fetchPublicaciones = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/tema');
+        const data = await response.json();
+        setPublicaciones(data);
+      } catch (error) {
+        console.error('Error al obtener las publicaciones:', error);
+      }
+    };
+  
+    fetchPublicaciones();
+  }, []);
 
   const handleChange = (e) => {
     const { id, value } = e.target;

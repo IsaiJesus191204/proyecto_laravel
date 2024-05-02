@@ -42,16 +42,6 @@ function UserList(props) {
 
 
 
-  const users = [
-    { name: "Huasacca Smith", imageUrl: "src/img/Usuario.png" },
-    { name: "Pinillos Shalon", imageUrl: "src/img/Usuario.png" },
-    { name: "Benja Mhee-ko Gerrikho", imageUrl: "src/img/Usuario.png" },
-    { name: "Carmen Miranda MeLa Rima", imageUrl: "src/img/Usuario.png" },
-    { name: "Lola Buenas Lolas", imageUrl: "src/img/Usuario.png" },
-    { name: "Boris Mexicano Escalante", imageUrl: "src/img/Usuario.png" },
-    { name: "Yamir Blabberwocky", imageUrl: "src/img/Usuario.png" },
-  ];
-
   const [numberOfCategoriesToShow, setNumberOfCategoriesToShow] = useState(4);
   const [isShowingAllCategories, setIsShowingAllCategories] = useState(false);
 
@@ -67,7 +57,7 @@ function UserList(props) {
   const [isShowingAllUsers, setIsShowingAllUsers] = useState(false);
 
   const handleToggleUsersClick = () => {
-    const newNumberOfUsersToShow = isShowingAllUsers ? 3 : users.length;
+    const newNumberOfUsersToShow = isShowingAllUsers ? 3 : usuarios.length;
     setIsShowingAllUsers(!isShowingAllUsers);
     setNumberOfUsersToShow(newNumberOfUsersToShow);
   };
@@ -77,16 +67,10 @@ function UserList(props) {
       <section className="users_list">
         <h2>Usuarios</h2>
         <ul>
-          {users.slice(0, numberOfUsersToShow).map((user) => (
-            <li key={user.name}>
-              <img
-                src={user.imageUrl}
-                alt={user.name}
-                onError={(e) => {
-                  e.target.src = "https://via.placeholder.com/64x64";
-                }}
-              />
-              <span className="name">{user.name}</span>
+          {usuarios.slice(0, numberOfUsersToShow).map((usuario) => (
+            <li key={usuario.id}>
+              <img src={usuario.imagen_usuario} alt={usuario.nombre} />
+              <span className="name">{usuario.nombre}</span>
             </li>
           ))}
         </ul>
