@@ -1,0 +1,95 @@
+
+
+.Nota {
+
+}
+
+.Cuadro {
+    height: 100vh; /* Establece la altura para ocupar toda la pantalla */
+    margin: 0; /* Elimina el margen */
+  }
+  
+  .Noticias_Relaciones{
+ 
+    font-size: 20px; /* Puedes ajustar este valor según el tamaño deseado */
+
+    padding: 100px 10px 10px 500px;
+  
+    color: rgb(59, 59, 57);
+  }
+
+.titulo{
+    font-size: 40px; /* Puedes ajustar este valor según el tamaño deseado */
+
+    padding: 10px 400px 10px 500px;
+
+}
+
+  .sub{
+    font-size: 20px; /* Puedes ajustar este valor según el tamaño deseado */
+
+
+    padding: 10px 400px 10px 500px;
+  }
+
+.foto{
+    padding: 30px 400px 20px 500px;;
+    
+
+}
+
+  .parrafo{
+    font-size: 20px; /* Puedes ajustar este valor según el tamaño deseado */
+
+    padding: 60px 600px 100px 600px;
+ 
+  }
+
+  .niñologo{
+    padding: 100px 1px 30px 600px;
+
+}
+.contenidos_3 {
+    display: flex;
+    justify-content: space-between; /* Distribuye uniformemente los elementos */
+    padding: 40px 500px 10px 500px;
+  }
+  
+  .usuario, .comentario, .fecha {
+    display: flex;
+    align-items: center;
+  }
+  
+  .usuario, .comentario {
+    margin-right: 10px; /* Espacio entre los elementos */
+  }
+  
+  .logoUsuario,
+  .logoComentario {
+    width: 25px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+    
+  }
+  .linea {
+    border: 1px solid black; /* Estilo de la línea */
+    margin: 10px 450px; /* Espacio entre la línea y los elementos circundantes */
+  }
+  .botonFlecha {
+    width: 70px; /* Ajusta el tamaño del botón */
+    height: 70px; /* Ajusta el tamaño del botón */
+    border-radius: 50%; 
+    border: 2px solid black; /* Borde negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 200px;
+  }
+
+  
+  .logoFlecha {
+    width: 40px; /* Ajusta el tamaño de la imagen de la flecha */
+    height: auto; /* Mantén la proporción de la imagen */
+  }
+  
