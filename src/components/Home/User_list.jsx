@@ -12,7 +12,7 @@ function UserList(props) {
   useEffect(() => {
     const fetchTemas = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/tema");
+        const response = await fetch("https://backcambios-production.up.railway.app/api/tema");
         const data = await response.json();
         setTemas(data.message);
         console.log(data.message);
@@ -27,7 +27,7 @@ function UserList(props) {
     useEffect(() => {
       const fetchUsuarios = async () => {
         try {
-          const response = await fetch("http://127.0.0.1:8000/api/usuarios");
+          const response = await fetch("https://backcambios-production.up.railway.app/api/usuarios");
           const data = await response.json();
           setUsuarios(data.data);
           console.log(data.data);
