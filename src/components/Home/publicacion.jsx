@@ -1,79 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios'; // Importa axios
-import Publicacion_card from './publicacion_card';
-import logo4 from '../../assets/img/mas.png';
-import logo3 from '../../assets/img/mas.png';
-import logo_virgo from '../../assets/img/virgo_png.png';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import logo4 from "../../assets/img/mas.png";
+import logo3 from "../../assets/img/mas.png";
+import logo_virgo from "../../assets/img/virgo_png.png";
+// Importa axios
+import Publicacion_card from "./publicacion_card";
+
+import "./publicaciones.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './publicaciones.css';
 
 function Publicacion() {
+  const [titulo, setTitulo] = useState("");
+  const [subTema, setSubTema] = useState("");
+  const [contenido, setContenido] = useState("");
+  const [imagen, setImagen] = useState(null);
+  const [usuario_id, setusuario_id] = useState("");
+  const [categoriaId, setCategoriaId] = useState("");
+  const [temaId, setTemaId] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Crear un objeto FormData para enviar datos de formulario y archivos
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("Sub_tema", subTema);
+    formData.append("contenido", contenido);
+    formData.append("imagen", imagen);
+    formData.append("usuario_id", usuario_id);
+    formData.append("categoria_id", categoriaId);
+    formData.append("tema_id", temaId);
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/publicaciones",
+        formData
+      );
+      console.log("Respuesta del servidor:", response.data);
+
+      handleClose();
+    } catch (error) {
+      console.error("Error al crear la publicación:", error);
+    }
+  };
+
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    titulo: '',
-    subTema: '',
-    contenido: '',
-    categoria: '',
-    tema: '',
-  });
-  const [publicaciones, setPublicaciones] = useState([]);
+
   const [categorias, setCategorias] = useState([]);
   const [temas, setTemas] = useState([]); // Agrega estado para almacenar los temas
 
   useEffect(() => {
-    const fetchPublicaciones = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:8000/api/publicaciones');
-        const data = await response.json();
-        setPublicaciones(data);
-      } catch (error) {
-        console.error('Error al obtener las publicaciones:', error);
-      }
-    };
-
     const fetchCategorias = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/categorias');
+        const response = await fetch("http://127.0.0.1:8000/api/categorias");
         const data = await response.json();
         setCategorias(data.message);
       } catch (error) {
-        console.error('Error al obtener las categorías:', error);
+        console.error("Error al obtener las categorías:", error);
       }
     };
 
-    const fetchTemas = async () => { // Función para obtener los temas
+    const fetchTemas = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/tema');
+        const response = await axios.get("http://127.0.0.1:8000/api/tema");
         setTemas(response.data.message);
       } catch (error) {
-        console.error('Error al obtener los temas:', error);
+        console.error("Error al obtener los temas:", error);
       }
     };
 
-    fetchPublicaciones();
     fetchCategorias();
     fetchTemas(); // Llama a la función para obtener los temas
   }, []);
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const handleCreatePost = () => {
-    setShowForm(false);
-
-    const { titulo, subTema, contenido, categoria, tema } = formData;
-    const alertMessage = `
-      Título: ${titulo}
-      Sub Tema: ${subTema}
-      Contenido: ${contenido}
-      Categoría: ${categoria}
-      Tema: ${tema}
-    `;
-    window.alert(alertMessage);
-  };
 
   const toggleForm = () => setShowForm(!showForm);
 
@@ -130,15 +130,22 @@ function Publicacion() {
             <br />
 
             <div className="doble_margen">
-              <form>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="titulo"
+                  value={usuario_id}
+                  onChange={(e) => setusuario_id(e.target.value)}
+                />
                 <div className="form-group">
                   <label htmlFor="titulo">Título</label>
                   <input
                     type="text"
                     className="form-control"
                     id="titulo"
-                    value={formData.titulo}
-                    onChange={handleChange}
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
                   />
                 </div>
 
@@ -148,8 +155,8 @@ function Publicacion() {
                     type="text"
                     className="form-control"
                     id="subTema"
-                    value={formData.subTema}
-                    onChange={handleChange}
+                    value={subTema}
+                    onChange={(e) => setSubTema(e.target.value)}
                   />
                 </div>
                 <div className="form-group">
@@ -157,8 +164,8 @@ function Publicacion() {
                   <textarea
                     className="form-control"
                     id="contenido"
-                    value={formData.contenido}
-                    onChange={handleChange}
+                    value={contenido}
+                    onChange={(e) => setContenido(e.target.value)}
                   ></textarea>
                 </div>
 
@@ -173,6 +180,7 @@ function Publicacion() {
                     id="image-input"
                     accept="image/*"
                     className="custom-file-input"
+                    onChange={(e) => setImagen(e.target.files[0])}
                   />
                 </div>
 
@@ -187,11 +195,11 @@ function Publicacion() {
                     <select
                       class="form-control"
                       id="categoria"
-                      value={formData.categoria}
-                      onChange={handleChange}
+                      value={categoriaId}
+                      onChange={(e) => setCategoriaId(e.target.value)}
                     >
                       <option value="">Selecciona una categoría</option>
-                      {categorias.map(categoria => (
+                      {categorias.map((categoria) => (
                         <option key={categoria.id} value={categoria.id}>
                           {categoria.nombre}
                         </option>
@@ -206,24 +214,32 @@ function Publicacion() {
                     <select
                       class="form-control"
                       id="tema"
-                      value={formData.tema}
-                      onChange={handleChange}
+                      value={temaId}
+                      onChange={(e) => setTemaId(e.target.value)}
                     >
                       <option value="">Selecciona un tema</option>
-                      {temas.map(tema => ( // Mapea los temas para generar las opciones
-                        <option key={tema.id} value={tema.id}>
-                          {tema.nombre}
-                        </option>
-                      ))}
+                      {temas.map(
+                        (
+                          tema // Mapea los temas para generar las opciones
+                        ) => (
+                          <option key={tema.id} value={tema.id}>
+                            {tema.nombre}
+                          </option>
+                        )
+                      )}
                     </select>
                   </div>
                 </div>
               </form>
-              <div className="modal-footer">
-                <button className="btn_cancelar" onClick={toggleForm}>
+              <div className="modal-foote_s">
+                <button className="btn_cancelar_1" onClick={toggleForm}>
                   Cancelar
                 </button>
-                <button className="btn_crear" onClick={handleCreatePost}>
+                <button
+                  className="btn_crear"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
                   Crear
                 </button>
               </div>

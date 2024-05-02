@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
 import logo2 from "../../assets/img/user.png";
+
 import "./publicaciones.css";
 
 function Publicacion_card() {
+  
   const [publicaciones, setPublicaciones] = useState([]);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ function Publicacion_card() {
   return (
     <>
       {publicaciones.map((publicacion, index) => (
-        <div key={publicacion.email_usuario} className="card_home">
+        <div key={publicacion.id} className="card_home">
           <div className="card_public">
             <div className="info_">
               <div className="user_img">
@@ -29,8 +32,8 @@ function Publicacion_card() {
               <div className="cont_info">
                 <p>{publicacion.sub_tema}</p>
                 <nav>
-                  <button>Noticias</button>
-                  <button>Relaciones</button>
+                  <button>{publicacion.nombre_tema}</button>
+                  <button>{publicacion.nombre_categoria}</button>
                 </nav>
               </div>
             </div>
