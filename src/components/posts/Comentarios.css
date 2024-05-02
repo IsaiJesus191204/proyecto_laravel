@@ -9,7 +9,7 @@ body {
     color: #000;
   }
   .comentario {
-    
+    border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 15px;
     margin-top: 20px;
@@ -25,7 +25,7 @@ body {
     align-items: center; /* Alinea verticalmente los elementos al centro */
   }
   
-  .divider {
+  .divider_22 {
     border-top: 3px solid #000000;/* Establece la altura de la línea */
     margin-left: -6.1%;
     width: 112%; /* Establece el ancho al 100% */
@@ -38,6 +38,9 @@ body {
     margin: 0 auto;
     padding: 20px;
    
+    border: 1px solid #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 5px;
     position: relative;
     border-top-left-radius: 15px; /* Borde redondeado en la esquina superior izquierda */
@@ -54,12 +57,14 @@ body {
     text-align: center;
     background-color: #ffffff;
     max-width: 700px;
+    
     /* Sin borde en la parte inferior */
   }
 
   .top-frame h2 {
     font-size: 30px;
     margin-top: 0;
+    
   }
 
   .close-btn {
@@ -79,12 +84,14 @@ body {
   header {
     padding: 20px;
    
+    border-bottom: 1px solid #ffffff;
   }
   
   .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
   }
 
   .top-framee h2 {
@@ -103,6 +110,7 @@ body {
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
+    
   }
   
   h1 {
@@ -112,6 +120,7 @@ body {
   .user-details {
     display: flex;
     align-items: center;
+    
   }
   
   .user_img {
@@ -130,20 +139,21 @@ body {
     margin-right: 10px;
   }
   
-  .nac {
+    .profile-info .nac {
     color: #000;
-    margin-right: 50px;
+    margin-left:70px;
   }
 
   .action-buttons {
     display: flex;
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-top: -10px;
   }
   
   .btn {
     border-radius: 20px;
     padding: 10px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 5px;
@@ -205,7 +215,7 @@ body {
     color: black !important;
     border-radius: 7px;
     padding: 0.5px 30px;
-    border: 4px solid #000000; 
+    border: 2px solid #000000; 
   }
   
   .btn_programacion {
@@ -213,7 +223,7 @@ body {
     color: black !important;
     border-radius: 7px;
     padding: 0.5px 20px;
-    border: 4px solid #000000; 
+    border: 2px solid #000000; 
   }
 
   .texto_medio {

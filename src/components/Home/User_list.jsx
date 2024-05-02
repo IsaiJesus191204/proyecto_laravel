@@ -1,36 +1,64 @@
-import React, { useState } from "react";
-import "./User_list.css"; // Assuming you have styles for the user list
+import React, { useEffect, useState } from "react";
+
+import "./User_list.css";
+
+// Assuming you have styles for the user list
 
 function UserList(props) {
+
+  const [temas, setTemas] = useState([]);
+   const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    const fetchTemas = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/tema");
+        const data = await response.json();
+        setTemas(data.message);
+        console.log(data.message);
+      } catch (error) {
+        console.error("Error al obtener la lista de temas", error);
+      }
+    };
+
+    fetchTemas();
+  }, []);
+
+    useEffect(() => {
+      const fetchUsuarios = async () => {
+        try {
+          const response = await fetch("http://127.0.0.1:8000/api/usuarios");
+          const data = await response.json();
+          setUsuarios(data.data);
+          console.log(data.data);
+        } catch (error) {
+          console.error("Error al obtener la lista de temas", error);
+        }
+      };
+
+      fetchUsuarios();
+    }, []);
+
+
+
+
   const users = [
-    { name: 'Huasacca Smith', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Pinillos Shalon', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Benja Mhee-ko Gerrikho', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Carmen Miranda MeLa Rima', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Lola Buenas Lolas', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Boris Mexicano Escalante', imageUrl: 'src/img/Usuario.png' },
-    { name: 'Yamir Blabberwocky', imageUrl: 'src/img/Usuario.png' },
-  ];
-
-  const categories = [
-    { name: 'Programación' }, 
-    { name: 'Tecnología' },
-    { name: 'Angela White' },
-    { name: 'Superación personal' },
-    { name: 'Deportes' },
-    { name: 'Karely Ruiz' },
-    { name: 'Política' },
-    { name: 'Economía' },
-    { name: 'Música' },
-    { name: 'Alex Marín' },
-
+    { name: "Huasacca Smith", imageUrl: "src/img/Usuario.png" },
+    { name: "Pinillos Shalon", imageUrl: "src/img/Usuario.png" },
+    { name: "Benja Mhee-ko Gerrikho", imageUrl: "src/img/Usuario.png" },
+    { name: "Carmen Miranda MeLa Rima", imageUrl: "src/img/Usuario.png" },
+    { name: "Lola Buenas Lolas", imageUrl: "src/img/Usuario.png" },
+    { name: "Boris Mexicano Escalante", imageUrl: "src/img/Usuario.png" },
+    { name: "Yamir Blabberwocky", imageUrl: "src/img/Usuario.png" },
   ];
 
   const [numberOfCategoriesToShow, setNumberOfCategoriesToShow] = useState(4);
   const [isShowingAllCategories, setIsShowingAllCategories] = useState(false);
 
   const handleToggleCategoriesClick = () => {
-    const newNumberOfCategoriesToShow = isShowingAllCategories ? 4 : categories.length;
+    const newNumberOfCategoriesToShow = isShowingAllCategories
+      ? 4
+      : temas.length;
     setIsShowingAllCategories(!isShowingAllCategories);
     setNumberOfCategoriesToShow(newNumberOfCategoriesToShow);
   };
@@ -45,8 +73,8 @@ function UserList(props) {
   };
 
   return (
-    <div className="padre_3">
-      <section className="users">
+    <div className="padre_3_user_list">
+      <section className="users_list">
         <h2>Usuarios</h2>
         <ul>
           {users.slice(0, numberOfUsersToShow).map((user) => (
@@ -62,21 +90,18 @@ function UserList(props) {
             </li>
           ))}
         </ul>
-        <button
-          onClick={handleToggleUsersClick}
-          className={isShowingAllUsers ? "show-less" : "view-more"}
-        >
-          {isShowingAllUsers ? "Mostrar menos" : "Ver más usuarios"}
+        <button onClick={handleToggleUsersClick} className="button-user">
+          {isShowingAllUsers ? "Ver menos usuarios" : "Ver más usuarios"}
         </button>
       </section>
 
-      <div className="categories-container pizarra">
+      <div className="categories-container ">
         <section className="categories">
-          <h2>Categorías</h2>
+          <h2>Temas</h2>
           <div className="category-list">
-            {categories.slice(0, numberOfCategoriesToShow).map((category) => (
-              <div key={category.name} className="category-item">
-                <span className="category-name">{category.name}</span>
+            {temas.slice(0, numberOfCategoriesToShow).map((tema) => (
+              <div key={tema.id} className="category-item">
+                <span className="category-name">{tema.nombre}</span>
               </div>
             ))}
           </div>
@@ -84,7 +109,7 @@ function UserList(props) {
             onClick={handleToggleCategoriesClick}
             className="category-button"
           >
-            {isShowingAllCategories ? "Mostrar menos" : "Mostrar más"}
+            {isShowingAllCategories ? "Ver menos temas" : "Ver mas temas"}
           </button>
         </section>
       </div>

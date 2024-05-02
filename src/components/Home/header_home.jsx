@@ -18,7 +18,7 @@ function Header_home(props) {
     <div className="padre_home">
       <div className="head_home">
         <div className="logo">
-          <Link to={'/home'}>
+          <Link to={"/home"}>
             <img src={logo3} className=""></img>
           </Link>
         </div>
@@ -42,8 +42,12 @@ function Header_home(props) {
           <div className="modal_login">
             <div className="modal-content">
               <nav>
-                <p>User:</p>
-                <p>niebles quiña luis angel</p>
+                <p>Usurio</p>
+                <p>luis@gmail.com</p>
+              </nav>
+              <nav>
+                <p>Rol</p>
+                <p>Estudiante</p>
               </nav>
 
               <button onClick={toggleModal}>Salir</button>

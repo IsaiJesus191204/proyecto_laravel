@@ -87,10 +87,11 @@ height: 60px;
      width: 200px;
     
      position: absolute;
-     border: 2px solid rgb(75, 183, 255);
-     background-color: aliceblue;border-radius: 5px;
+     border: 2px solid rgb(78, 78, 78);
+     background-color: rgb(255, 255, 255);border-radius: 5px;
      top: 85px;
      right:100px ;
+     padding: 5px;
 }
 .modal-content{
      flex-direction: column;
@@ -99,11 +100,19 @@ height: 60px;
      height: 100%;
     
 }
+.modal-content nav{
+     
+     border-bottom: 2px solid black;
+}
+.modal-content nav p {
+     margin: 5px 0px;
+}
 
 .modal-content button{
      margin-top: 10px;
-     background-color: rgb(32, 125, 255);
-     
+     border-radius: 10px;
+     background-color: rgb(255, 85, 85);
+     color: white;
      }
 
 
