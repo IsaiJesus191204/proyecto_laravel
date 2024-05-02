@@ -168,8 +168,13 @@ margin-left: 10px;
      
           height: 200px;
           width: 200px;
-         
+          overflow: hidden;
 }
+
+.img_card img {
+     width: 100%; /* Asegura que la imagen se ajuste al límite del contenedor */
+     height: auto; /* Ajusta automáticamente la altura según el ancho */
+   }
 
 
 .modal-container {
@@ -196,7 +201,6 @@ margin-left: 10px;
 
    .modal-footer {
      margin-top: 17px; 
-     outline: 2px solid red;
    }
 
    .modal-content {

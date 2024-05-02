@@ -1,42 +1,48 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import logo2 from "../../assets/img/user.png";
-
 import "./publicaciones.css";
 
 function Publicacion_card() {
+  const [publicaciones, setPublicaciones] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/publicaciones")
+      .then((response) => response.json())
+      .then((data) => setPublicaciones(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
   return (
     <>
-      <div className="card_home">
-        <div className="card_public">
-          <div className="info_">
-            <div className="user_img">
-              <img src={logo2}></img>
-              <nav className="nav">
-                <samp>p4cman jose</samp>
-                <samp>mapap@senati.pe</samp>
-              </nav>
-              <nav className="nac">16 / 04 / 2024</nav>
+      {publicaciones.map((publicacion, index) => (
+        <div key={publicacion.email_usuario} className="card_home">
+          <div className="card_public">
+            <div className="info_">
+              <div className="user_img">
+                <img src={publicacion.imagen_usuario || logo2} alt="User" />
+                <nav className="nav">
+                  <samp>{publicacion.nombre_usuario}</samp>
+                  <samp>{publicacion.email_usuario}</samp>
+                </nav>
+                <nav className="nac">{publicacion.fecha_publicacion}</nav>
+              </div>
+              <div className="cont_info">
+                <p>{publicacion.sub_tema}</p>
+                <nav>
+                  <button>Noticias</button>
+                  <button>Relaciones</button>
+                </nav>
+              </div>
             </div>
-            <div className="cont_info">
-              <p>
-                Proyecto real no fake
-                empresariahhhhhhhhhhhhhhhllllllllllllllllllllllllllllllllllllllllllldssssss
-                que son participes los alumnos de senati lamentablemente:
-                trabajo asignado con el proposito de presentarlo y aprobar el
-                ciclo, posdata tu prima
-              </p>
-              <nav>
-                <button>Noticias</button>
-                <button>Relaciones</button>
-              </nav>
+            <div className="img_card">
+              <img
+                src={publicacion.imagen_publicacion || logo2}
+                alt="Publicacion"
+              />
             </div>
-          </div>
-          <div className="img_card">
-            <img src={logo2}></img>
           </div>
         </div>
-      </div>
+      ))}
     </>
   );
 }

@@ -8,7 +8,7 @@ function Comentarios() {
   const [mostrarComentarios, setMostrarComentarios] = useState(true);
 
   const handleGoBack = () => {
-    window.history.back(); // Retrocede como si se hubiera presionado el botón de retroceso del navegador
+    window.history.back();
   };
 
   return (
