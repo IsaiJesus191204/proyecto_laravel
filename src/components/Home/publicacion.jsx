@@ -90,10 +90,6 @@ function Publicacion() {
 
       <Link to={"/user_posts"}>
         <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
-        <Publicacion_card />
       </Link>
 
       {showForm && (
