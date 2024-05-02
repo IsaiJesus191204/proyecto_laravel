@@ -18,8 +18,9 @@
   }
   
   .users_list img {
-    width: 30px;
-    height: auto;
+    width: 50px;
+    border-radius: 100%;
+    height: 50px;
     margin-right: 10px;
     float: left;
   }
