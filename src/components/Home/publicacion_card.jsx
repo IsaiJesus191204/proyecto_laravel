@@ -8,8 +8,8 @@ function Publicacion_card() {
   return (
     <>
       <div className="card_home">
-        <div className="card">
-          <div className="info">
+        <div className="card_public">
+          <div className="info_">
             <div className="user_img">
               <img src={logo2}></img>
               <nav className="nav">

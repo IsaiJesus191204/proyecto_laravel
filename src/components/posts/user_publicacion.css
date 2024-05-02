@@ -1,0 +1,128 @@
+.padre_padre_user_public{
+     height: auto;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.padre_user_publicaciones{
+
+
+     
+     margin: 120px;
+     
+     height: auto;
+     width: 800px;
+    
+}
+
+.padre_user_publicaciones header{
+
+     
+     margin: 5px;
+}
+.user_public_header .uph_nav1{
+     display: flex;
+     
+     justify-content: space-between;
+     align-items: center;
+
+}
+
+.user_public_header .uph_nav1 img{
+
+     width: 50px;
+     height: auto;
+}
+
+
+.user_public_header .uph_nav2 {
+     display: flex;
+     
+     flex-direction: column;
+     margin: 10px 0px;
+     padding-bottom: 30px;
+     border-bottom: 2px solid black;
+
+}
+.user_public_header .uph_nav2 h1{
+     
+     font-size: 60px;
+     font-weight: 500;
+     margin-bottom: 15px;
+     
+
+}
+.user_public_header .uph_nav2 h3 {
+
+     font-size: 20px;
+     font-weight: 100;
+     margin-bottom: 30px;
+     
+
+}
+
+section{
+     
+     margin: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+}
+section .nac11 {
+     display: flex;
+     align-items: center;
+}
+
+
+
+section .nav11 {
+     display: flex;
+     align-items: center;
+}
+
+section .nav11 span{
+
+     margin: 0px 10px;
+}
+section .nav11 img {
+    height: auto;
+    width: 40px ;
+    
+}
+
+
+section .nav22{
+     display: flex;
+     align-items: center;
+}
+section .nav22 img {
+     height: auto;
+          width: 30px;
+          margin-left: 50px;
+          margin-right: 10px;
+}
+section .nac22 {
+     
+     margin-right: 20px;
+}
+
+.body_user_public{
+     margin: 10px;
+    
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+.body_user_public text{
+     text-align: center;
+      margin: 10px;
+      height: auto;
+      width: 700px ;
+      font-size: 20px;
+      padding:50px 20px;
+      border-bottom: 3px solid black;
+     
+}

@@ -63,7 +63,7 @@ function CrearPublicacion() {
             </div>
           </form>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className='button_crear_publicacion'>
           <Button variant="secondary" onClick={handleClose}>Cancelar</Button>
           <Button variant="primary" onClick={handleClose}>Crear</Button>
         </Modal.Footer>

@@ -1,6 +1,4 @@
-h1{
-     color: blue;
-}
+
 .publicaciones_{
 display: flex;
 
@@ -24,13 +22,14 @@ align-items: flex-start;
      justify-content: flex-start;
      text-align: center;
      margin-bottom: 30px;
+     margin-left: -100px;
     
 }
 
 .menu-icon {
      height: 40px;
      width: 40px;
-     margin-left: 250px;
+    
      margin-right: 40px;
    }
    
@@ -73,11 +72,11 @@ border-bottom: 5px solid rgb(77, 76, 76)
      width: 700px;
      border-bottom: 2px solid black;
      margin: 10px;
-     margin-left: 240px;
+     margin-left: 150px;
     
 }
 
-.card{
+.card_public{
      border-radius: 20px;
      height:auto ;
      width: 700px;
@@ -88,8 +87,9 @@ border-bottom: 5px solid rgb(77, 76, 76)
      flex-direction: row;
      justify-content: space-between;
      margin-bottom: 30px;
+     
 }
-.info{
+.info_{
      
      height: auto;
      width: 460px;
@@ -103,6 +103,7 @@ border-bottom: 5px solid rgb(77, 76, 76)
      justify-content:  flex-start;
      height: 50px;
      width: auto;
+     
     
 }
 .user_img img{
@@ -167,6 +168,7 @@ margin-left: 10px;
      
           height: 200px;
           width: 200px;
+         
 }
 
 
@@ -193,7 +195,8 @@ margin-left: 10px;
    }
 
    .modal-footer {
-     margin-top: 17px; /* Agregar margen superior al pie de página del modal */
+     margin-top: 17px; 
+     outline: 2px solid red;
    }
 
    .modal-content {
@@ -316,15 +319,17 @@ margin-left: 10px;
     
    .modal-footer {
      display: flex;
+     justify-content: space-between;
    }
    
    .btn_cancelar {
-     margin-right: 50px;
+     margin:10px;
      background-color: white !important;
      color: black !important;
      border-radius: 7px;
      padding: 4px 20px;
-     border: 4px solid #A2A2A2; 
+     border: 4px solid #A2A2A2;
+     margin-right: 10px; 
    }
    
    .btn_crear {
