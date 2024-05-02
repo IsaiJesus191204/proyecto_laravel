@@ -12,7 +12,7 @@ function UserList(props) {
   useEffect(() => {
     const fetchTemas = async () => {
       try {
-        const response = await fetch("https://backcambios-production.up.railway.app/api/tema");
+        const response = await fetch("https://laravel-back.up.railway.app/api/tema");
         const data = await response.json();
         setTemas(data.message);
         console.log(data.message);
@@ -27,7 +27,7 @@ function UserList(props) {
     useEffect(() => {
       const fetchUsuarios = async () => {
         try {
-          const response = await fetch("https://backcambios-production.up.railway.app/api/usuarios");
+          const response = await fetch("https://laravel-back.up.railway.app/api/usuarios");
           const data = await response.json();
           setUsuarios(data.data);
           console.log(data.data);
