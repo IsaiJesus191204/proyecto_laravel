@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // Importa axios
 import Publicacion_card from './publicacion_card';
 import logo4 from '../../assets/img/mas.png';
 import logo3 from '../../assets/img/mas.png';
@@ -17,19 +18,42 @@ function Publicacion() {
     tema: '',
   });
   const [publicaciones, setPublicaciones] = useState([]);
+  const [categorias, setCategorias] = useState([]);
+  const [temas, setTemas] = useState([]); // Agrega estado para almacenar los temas
 
   useEffect(() => {
     const fetchPublicaciones = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/tema');
+        const response = await fetch('http://127.0.0.1:8000/api/publicaciones');
         const data = await response.json();
         setPublicaciones(data);
       } catch (error) {
         console.error('Error al obtener las publicaciones:', error);
       }
     };
-  
+
+    const fetchCategorias = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/categorias');
+        const data = await response.json();
+        setCategorias(data.message);
+      } catch (error) {
+        console.error('Error al obtener las categorías:', error);
+      }
+    };
+
+    const fetchTemas = async () => { // Función para obtener los temas
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/tema');
+        setTemas(response.data.message);
+      } catch (error) {
+        console.error('Error al obtener los temas:', error);
+      }
+    };
+
     fetchPublicaciones();
+    fetchCategorias();
+    fetchTemas(); // Llama a la función para obtener los temas
   }, []);
 
   const handleChange = (e) => {
@@ -166,10 +190,12 @@ function Publicacion() {
                       value={formData.categoria}
                       onChange={handleChange}
                     >
-                      <option value="1">Selecciona un país</option>
-                      <option value="2">Estados Unidos</option>
-                      <option value="3">Canadá</option>
-                      <option value="4">México</option>
+                      <option value="">Selecciona una categoría</option>
+                      {categorias.map(categoria => (
+                        <option key={categoria.id} value={categoria.id}>
+                          {categoria.nombre}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
@@ -183,10 +209,12 @@ function Publicacion() {
                       value={formData.tema}
                       onChange={handleChange}
                     >
-                      <option value="1">Selecciona un país</option>
-                      <option value="2">Estados Unidos</option>
-                      <option value="3">Canadá</option>
-                      <option value="4">México</option>
+                      <option value="">Selecciona un tema</option>
+                      {temas.map(tema => ( // Mapea los temas para generar las opciones
+                        <option key={tema.id} value={tema.id}>
+                          {tema.nombre}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
