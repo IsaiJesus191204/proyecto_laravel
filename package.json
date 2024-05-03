@@ -6,15 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-<<<<<<< HEAD
-    "start": "vite",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-=======
     "preview": "vite preview",
 "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "start": "serve dist -s -n -L -p- $PORT"
->>>>>>> 21c6e8536eae6cfde5bdded4b56d5ea51a315c0c
   },
   "dependencies": {
     "axios": "^0.21.1",
