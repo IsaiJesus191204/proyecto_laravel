@@ -15,7 +15,7 @@ import "./App.css";
 function App() {
   return (
     <>
-            <h1> Vite Prueba</h1>
+            <h1> Vite Prueeba</h1>
 <h1>{import.meta.env.VITE_API }</h1>
       <Router>
         <div>
