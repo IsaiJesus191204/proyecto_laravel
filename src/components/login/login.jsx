@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import logo1 from "../../assets/img/github.png";
 import logo4 from "../../assets/img/google.png";
@@ -24,13 +23,28 @@ function Login() {
     const { status, message } = response.data;
 
     if (status === "success") {
+
       window.location.href = "/home";
       console.log(message);
+
     }
     if (status === "failed") {
+
+      
       console.log(message);
     }
   };
+
+
+
+
+
+//evento-TOMAR_ID_USER
+
+
+
+
+
 
   return (
     <>

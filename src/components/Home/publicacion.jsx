@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import logo4 from "../../assets/img/mas.png";
 import logo3 from "../../assets/img/mas.png";
@@ -40,12 +40,12 @@ function Publicacion() {
       );
       console.log("Respuesta del servidor:", response.data);
 
-       console.log("Respuesta del servidor:", response.data);
+      console.log("Respuesta del servidor:", response.data);
 
-       if (response.status === 201) {
-         // Redirigir a la página de inicio si la respuesta es 201
-         window.location.href = "/home";
-       }
+      if (response.status === 201) {
+        // Redirigir a la página de inicio si la respuesta es 201
+        window.location.href = "/home";
+      }
     } catch (error) {
       console.error("Error al crear la publicación:", error);
     }
@@ -82,6 +82,40 @@ function Publicacion() {
 
   const toggleForm = () => setShowForm(!showForm);
 
+  //card_publicaciones
+  const [publicaciones, setPublicaciones] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/publicaciones")
+      .then((response) => response.json())
+      .then((data) => setPublicaciones(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  //uno
+  //const [publicacionSeleccionada, setPublicacionSeleccionada] = useState(null);
+  
+  
+  const navigate = useNavigate();
+
+  const handleSeleccionarPublicacion = async (id) => {
+   
+    try {
+      // Realizar la llamada a la API con el id
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/publicaciones/${id}`
+      );
+      const data = await response.json();
+
+      // Navegar a user_posts con los datos de la publicación
+      navigate("/user_posts", { state: { publicacionData: data } });
+
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   return (
     <div className="publicaciones_">
       <div className="menu">
@@ -117,9 +151,24 @@ function Publicacion() {
         </nav>
       </div>
 
-      <Link to={"/user_posts"}>
-        <Publicacion_card />
-      </Link>
+      {publicaciones.map((publicacion) => (
+        <div
+          key={publicacion.id}
+          onClick={() => handleSeleccionarPublicacion(publicacion.id)}
+        >
+          <Publicacion_card
+            id={publicacion.id}
+            imagen_usuario={publicacion.imagen_usuario}
+            imagen_publicacion={publicacion.imagen_publicacion}
+            nombre_usuario={publicacion.nombre_usuario}
+            email_usuario={publicacion.email_usuario}
+            fecha_publicacion={publicacion.fecha_publicacion}
+            sub_tema={publicacion.sub_tema}
+            nombre_tema={publicacion.nombre_tema}
+            nombre_categoria={publicacion.nombre_categoria}
+          />
+        </div>
+      ))}
 
       {showForm && (
         <div className="modal-container">

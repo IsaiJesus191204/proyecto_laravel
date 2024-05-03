@@ -1,11 +1,19 @@
-import Header_home from "../Home/header_home";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import logo5 from "../../assets/img/comentario.png";
 import logo4 from "../../assets/img/flecha.png";
 import logo3 from "../../assets/img/user.png";
-import logo5 from "../../assets/img/comentario.png";
-import { Link } from "react-router-dom";
+import Header_home from "../Home/header_home";
+
 import "./user_publicacion.css";
 
 function User_publicacion() {
+
+
+
+
+  
   return (
     <div className="padre_padre_user_public">
       <Header_home></Header_home>
