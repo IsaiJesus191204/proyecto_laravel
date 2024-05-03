@@ -94,12 +94,10 @@ function Publicacion() {
 
   //uno
   //const [publicacionSeleccionada, setPublicacionSeleccionada] = useState(null);
-  
-  
+
   const navigate = useNavigate();
 
   const handleSeleccionarPublicacion = async (id) => {
-   
     try {
       // Realizar la llamada a la API con el id
       const response = await fetch(
