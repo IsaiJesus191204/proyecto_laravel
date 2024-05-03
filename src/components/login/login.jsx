@@ -76,7 +76,7 @@ function Login() {
   </button>
   <Link to="/home"> {/* Redirige a la página de inicio */}
     <button>
-      <img src={logo1}></img> <p>GitHub ok</p>
+      <img src={logo1}></img> <p>GitHub oik</p>
     </button>
   </Link>
 </nav>
