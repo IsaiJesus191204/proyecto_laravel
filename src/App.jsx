@@ -25,7 +25,8 @@ function App() {
             <Route exact path="/home" element={<Index />}></Route>
 
             <Route exact path="/crear" element={<CrearPublicacion />}></Route>
-    
+      <h1> Vite Prueba</h1>
+<h1>{import.meta.env.VITE_API }</h1>
             <Route
               exact
               path="/user_posts"
