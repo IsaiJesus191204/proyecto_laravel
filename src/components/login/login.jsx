@@ -15,7 +15,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("http://127.0.0.1:8000/api/login", {
+    const response = await axios.post("https://laravel-back.up.railway.app/api/login", {
       email,
       password,
     });
@@ -81,15 +81,22 @@ function Login() {
             <nav className="con">
               <p>o entrar con </p>
             </nav>
+
+
             <nav className="button">
-              <button>
-                <img src={logo4}></img>
-                <p>Google</p>
-              </button>
-              <button>
-                <img src={logo1}></img> <p>GitHub</p>
-              </button>
-            </nav>
+  <button>
+    <img src={logo4}></img>
+    <p>Google</p>
+  </button>
+  <Link to="/home"> {/* Redirige a la página de inicio */}
+    <button>
+      <img src={logo1}></img> <p>GitHub oik</p>
+    </button>
+  </Link>
+</nav>
+
+
+
           </div>
         </section>
         <div className="part2"></div>
