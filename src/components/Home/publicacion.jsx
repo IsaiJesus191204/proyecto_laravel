@@ -40,7 +40,12 @@ function Publicacion() {
       );
       console.log("Respuesta del servidor:", response.data);
 
-      handleClose();
+       console.log("Respuesta del servidor:", response.data);
+
+       if (response.status === 201) {
+         // Redirigir a la página de inicio si la respuesta es 201
+         window.location.href = "/home";
+       }
     } catch (error) {
       console.error("Error al crear la publicación:", error);
     }

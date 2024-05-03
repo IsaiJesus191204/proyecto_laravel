@@ -1,13 +1,13 @@
+import axios from "axios";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import logo1 from "../../assets/img/github.png";
+import logo4 from "../../assets/img/google.png";
+import logo3 from "../../assets/img/login.png";
 import logo2 from "../../assets/img/user.png";
 
-import logo3 from "../../assets/img/login.png";
-import logo4 from "../../assets/img/google.png";
-import logo1 from "../../assets/img/github.png";
-import { Link } from "react-router-dom";
 import "./login.css";
-import React, { useState } from "react";
-
-import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
