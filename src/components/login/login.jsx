@@ -23,28 +23,15 @@ function Login() {
     const { status, message } = response.data;
 
     if (status === "success") {
-
       window.location.href = "/home";
       console.log(message);
-
     }
     if (status === "failed") {
-
-      
       console.log(message);
     }
   };
 
-
-
-
-
-//evento-TOMAR_ID_USER
-
-
-
-
-
+  //evento-TOMAR_ID_USER
 
   return (
     <>
@@ -82,21 +69,19 @@ function Login() {
               <p>o entrar con </p>
             </nav>
 
-
             <nav className="button">
-  <button>
-    <img src={logo4}></img>
-    <p>Google</p>
-  </button>
-  <Link to="/home"> {/* Redirige a la página de inicio */}
-    <button>
-      <img src={logo1}></img> <p>GitHub oik</p>
-    </button>
-  </Link>
-</nav>
-
-
-
+              <button>
+                <img src={logo4}></img>
+                <p>Google</p>
+              </button>
+              <Link to="/home">
+                {" "}
+                {/* Redirige a la página de inicio */}
+                <button>
+                  <img src={logo1}></img> <p>GitHub oik</p>
+                </button>
+              </Link>
+            </nav>
           </div>
         </section>
         <div className="part2"></div>
