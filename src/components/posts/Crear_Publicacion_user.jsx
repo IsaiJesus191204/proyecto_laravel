@@ -2,7 +2,15 @@ import React, { useState } from "react";
 
 import "./Crear_Publicacion_user.css";
 import logo3 from "../../assets/img/user.png";
-function CrearPublicacion_user() {
+function CrearPublicacion_user({
+  id,
+  nombre_usuario,
+  email_usuario,
+  fecha_comentario,
+  contenido,
+  id_usuario,
+  imagen_usuario,
+}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
@@ -10,24 +18,20 @@ function CrearPublicacion_user() {
   };
   return (
     <>
-      <div className="padre_coment_user">
-        <section className="coment_user_img">
-          <img src={logo3}></img>
+      <div className="padre_coment_user" id={id}>
+        <section className="coment_user_img" id={id_usuario}>
+          <img src={imagen_usuario}></img>
         </section>
         <section className="section_public_coment">
           <div className="coment_user_coment">
             <nav className="coment_user_info">
               <div>
-                <p>juanito maicol</p>
-                <p>juanitopere@senati.pe </p>
+                <p>{nombre_usuario}</p>
+                <p>{email_usuario}</p>
               </div>
-              <div>26 / 02 / 2024</div>
+              <div>{fecha_comentario}</div>
             </nav>
-            <nav className="coment_user_text">
-              se nota que alguien aquí nunca a salido de Mexico 😅 Si se da
-              cuenta en los señalamientos están en otro idioma , por lo tanto
-              esa tecnología solo es para países 1er mundistas jajajajajajaa
-            </nav>
+            <nav className="coment_user_text">{contenido}</nav>
           </div>
           <div className="responder">
             <button onClick={toggleModal}>responder</button>
@@ -37,7 +41,7 @@ function CrearPublicacion_user() {
               <img src={logo3}></img>
               <form>
                 <input type="text" placeholder="ingrese su comentario"></input>
-                
+
                 <button type="sybmit">publicar</button>
               </form>
             </div>

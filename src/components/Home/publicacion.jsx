@@ -12,6 +12,12 @@ import "./publicaciones.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Publicacion() {
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+  console.log(userData.data_user[0].id);
+  const User_id = userData.data_user[0].id;
+
   const [titulo, setTitulo] = useState("");
   const [subTema, setSubTema] = useState("");
   const [contenido, setContenido] = useState("");
@@ -29,7 +35,7 @@ function Publicacion() {
     formData.append("Sub_tema", subTema);
     formData.append("contenido", contenido);
     formData.append("imagen", imagen);
-    formData.append("usuario_id", usuario_id);
+    formData.append("usuario_id", User_id);
     formData.append("categoria_id", categoriaId);
     formData.append("tema_id", temaId);
 
@@ -40,14 +46,12 @@ function Publicacion() {
       );
       console.log("Respuesta del servidor:", response.data);
 
-      console.log("Respuesta del servidor:", response.data);
-
       if (response.status === 201) {
         // Redirigir a la página de inicio si la respuesta es 201
         window.location.href = "/home";
       }
-    } catch (error) {
-      console.error("Error al crear la publicación:", error);
+    } catch (e) {
+      console.error("Error al crear la publicación:", e);
     }
   };
 
@@ -157,6 +161,7 @@ function Publicacion() {
           <Publicacion_card
             id={publicacion.id}
             imagen_usuario={publicacion.imagen_usuario}
+            id_usuario={publicacion.id_usuaio}
             imagen_publicacion={publicacion.imagen_publicacion}
             nombre_usuario={publicacion.nombre_usuario}
             email_usuario={publicacion.email_usuario}
@@ -184,7 +189,7 @@ function Publicacion() {
             <div className="doble_margen">
               <form onSubmit={handleSubmit}>
                 <input
-                  type="text"
+                  type="hidden"
                   className="form-control"
                   id="titulo"
                   value={usuario_id}

@@ -5,6 +5,7 @@ import "./publicaciones.css";
 function Publicacion_card({
   id,
   imagen_usuario,
+  id_usuaio,
   imagen_publicacion,
   nombre_usuario,
   email_usuario,
@@ -29,12 +30,11 @@ function Publicacion_card({
   // };
 
   return (
-    
     <>
-      <div id={id} className="card_home" >
+      <div id={id} className="card_home">
         <div className="card_public">
           <div className="info_">
-            <div className="user_img">
+            <div className="user_img" id={id_usuaio}>
               <img src={imagen_usuario || logo2} alt="User" />
               <nav className="nav">
                 <samp>{nombre_usuario}</samp>

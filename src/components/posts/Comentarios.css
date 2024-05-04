@@ -240,3 +240,30 @@ body {
   color: rgb(0, 0, 0); /* Cambia el color del texto del botón */
   font-size: 20px; /* Cambia el tamaño del texto */
 }
+
+ /* realizar mi .comentari */
+
+ .comentar{
+display: flex;
+  
+  justify-content: space-between;
+ }
+ .realizar_mi_comentario{
+display: flex;
+
+align-items: center;
+justify-content: center;
+padding: 2px 20px;
+border-radius: 20px;
+border: 1px solid black;
+ }
+ .realizar_mi_comentario p {
+   margin: 0px 20px;
+   font-weight: 600;
+ }
+ .realizar_mi_comentario img{
+  height: 30px;
+ }
+.realizar_mi_comentario:hover{
+  background-color: rgb(157, 197, 253);
+}

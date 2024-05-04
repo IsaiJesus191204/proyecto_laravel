@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import logo5 from "../../assets/img/comentario.png";
 import logo4 from "../../assets/img/flecha.png";
 import logo3 from "../../assets/img/user.png";
@@ -13,7 +13,27 @@ function User_publicacion() {
   const { publicacionData } = location.state || {};
 
   const { data, total_comentario } = publicacionData;
-  console.log([data[0], total_comentario, "comoo"]);
+  console.log([data[0], total_comentario]);
+
+  //mama
+  const navigate = useNavigate();
+
+  const handleSeleccionarPublicacion = async () => {
+    try {
+      // Realizar la llamada a la API con el id
+      // const response = await fetch(
+      //   `http://127.0.0.1:8000/api/publicaciones/${id}`
+      // );
+      // const data_coment = await response.json();
+
+      navigate("/Comentarios", { state: { publicacionData: data[0] } });
+
+      console.log(data[0]);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   return (
     <div className="padre_padre_user_public">
@@ -38,10 +58,14 @@ function User_publicacion() {
                     <img src={data[0].imagen_usuario}></img>
                     <span>{data[0].email_usuario}</span>
                   </nav>
-                  <nav className="nav22">
-                    <Link to={"/Comentarios"}>
-                      <img src={logo5}></img>
-                    </Link>
+                  <nav
+                    className="nav22"
+                    id={data[0].id}
+                    onClick={() => handleSeleccionarPublicacion()}
+                  >
+                    {/* //<Link to={"/Comentarios"}> */}
+                    <img src={logo5}></img>
+                    {/* //</Link> */}
 
                     <p> {total_comentario}</p>
                   </nav>
