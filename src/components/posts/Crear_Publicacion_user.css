@@ -13,8 +13,9 @@
   
 }
 .coment_user_img img{
-  height: auto;
-  width: 110px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
  
 }
 .section_public_coment{

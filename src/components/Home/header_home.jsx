@@ -1,13 +1,20 @@
+import { useState } from "react";
+import React from "react";
 // MiComponente.js
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
-import React from "react";
+import logo3 from "../../assets/img/audi.png";
 import logo from "../../assets/img/logo.png";
 import logo2 from "../../assets/img/user.png";
-import logo3 from "../../assets/img/audi.png";
+
 import "./header_home.css";
-function Header_home(props) {
+
+function Header_home() {
+ 
+     const userData = JSON.parse(localStorage.getItem("userData"));
+
+ 
+
   const [modalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
@@ -31,23 +38,25 @@ function Header_home(props) {
         </div>
       </div>
       <div className="user_box flex items-center">
-        <p className=" user_p mr-4 text-1xl">Luis Niebles - Estudiante</p>
-        <div
-          className="user rounded"
-          onClick={toggleModal}
-        >
-          <img src={logo2} className="rounded-full"></img>
+        <p className=" user_p mr-4 text-1xl">
+          {userData.data_user[0].nombre} -{userData.data_user[0].nombre_rol}
+        </p>
+        <div className="user rounded" onClick={toggleModal}>
+          <img
+            src={userData.data_user[0].imagen_usuario}
+            className="rounded-full"
+          ></img>
         </div>
         {modalVisible && (
           <div className="modal_login">
             <div className="modal-content">
               <nav>
                 <p>Usurio</p>
-                <p>luis@gmail.com</p>
+                <p>{userData.data_user[0].email}</p>
               </nav>
               <nav>
                 <p>Rol</p>
-                <p>Estudiante</p>
+                <p>{userData.data_user[0].nombre_rol}</p>
               </nav>
 
               <button onClick={toggleModal}>Salir</button>
